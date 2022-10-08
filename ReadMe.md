@@ -2,7 +2,7 @@
 # ReadMe Generator 
 
 ## Description
-This project is a readme generator, it's intention is to make making readme's easier. 
+This project is of a ReadMe generator, it is meant to make ReadMe's an easier process. 
 
 ## Table of Contents
 [Installation](#installation)
@@ -13,13 +13,13 @@ This project is a readme generator, it's intention is to make making readme's ea
 [Tests](#tests)
 ## Installation 
 
-Github is needed to access this readme generator. 
+C console is required for the prompts. 
 
 ## Usage
-Follow the prompts in the console. 
+Follow the prompts. 
 
 ## Credits
-NPM and NodeJs 
+NPM and JavaScript. 
 
 ## License
 Apache License 2.0 
@@ -30,7 +30,7 @@ License: (undefined)  Apache License 2.0 License, Here is the link: https://open
 William 
 
 ## Testing
-jist 
+Jist 
 
 ## Questions
-Contact me at ramosw1993@gmail.com for any questions and check out my Github: https://github.com/undefined
+Contact me at ramosw1993@gmail.com for any questions and check out my Github: https://github.com/ramosw1993

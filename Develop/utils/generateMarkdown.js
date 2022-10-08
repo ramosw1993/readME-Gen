@@ -3,10 +3,10 @@
 function renderLicenseBadge(license) {
   var licenseBadge;
   if (license == `MIT License`){
-    licenseBadge = '[[License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)] \n';
+    licenseBadge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)] \n';
   }
   else if (license == `Apache License 2.0`){
-    licenseBadge = '[[License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)] \n';
+    licenseBadge = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)] \n';
   }
   else {
     licenseBadge = "";
@@ -62,7 +62,7 @@ ${data.contribution} \n
 ## Testing
 ${data.tests} \n
 ## Questions
-Contact me at ${data.email} for any questions and check out my Github: https://github.com/${data.Username}`;
+Contact me at ${data.email} for any questions and check out my Github: https://github.com/${data.username}`;
 };
 
 module.exports = generateMarkdown;

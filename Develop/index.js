@@ -1,68 +1,77 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-const markdownGen = require("./utils/generateMarkdown");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
 const questions = [
   {
     type: "input",
     massage: "What is the project title?",
-    name: "Title",
+    name: "title",
   },{
     type: "input",
     message: "Provide a detailed description of your project",
-    name: "Description",
-  },{
-    type: "input",
-    message: "Table of Contents",
-    name: "Table of Contents",
+    name: "description",
   },{
     type: "input",
     message: "Provide installation instruction for the user, if any",
-    name: "Installation",
+    name: "installation",
   },{
     type: "input",
-    message: "Provide examples and instructions for use",
-    name: "Usage",
+    message: "Provide examples and instructions for project usage",
+    name: "usage",
   },{
     type: "input",
-    message: "What license's are being used?",
-    options: [
-      "MIT License",
-      "Apache License 2.0",
-      "GNU General Public License",
-      "None",
+    message: "Credits for this project",
+    name: "credits",
+  },{
+    type: "list",
+    message: "Please choose an option for a license",
+    choices: [
+      `MIT License`,
+      `Apache License 2.0`,
+      `None`,
     ],
-    name: "License",
+    name: "license",
   },{
     type: "input",
     message: "Contributors of this project",
-    name: "Contribution guideline",
+    name: "contribution",
   },{
     type: "input",
-    message: "What commands are needed to test this application?",
-    name: "Test",
-  },
+    message: "Enter tests?",
+    name: "tests",
+  },{
+      type: 'input',
+      message: "What is your email?",
+      name: 'email',
+  },{
+        type: 'input',
+        message: "What is your username?",
+        name: 'username',
+    },
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, function (error) {
-    if (err) {
+  fs.writeFile(fileName, data, function(error) {
+    console.log(data);
+    if (error) {
       return console.log(error);
     } else {
       console.log("success");
     }
   });
-}
+};
 
 // TODO: Create a function to initialize app
 function init() {
-  inquirer.prompt(questions).then(function(data) {
-    writeToFile("README.md", markdownGen(data));
+  inquirer.prompt([...questions]).then(function(data) {
+    console.log(data);
+    writeToFile("./ReadMe.md", generateMarkdown(data))
   });
-}
+};
 
 // Function call to initialize app
 init();

@@ -19,7 +19,7 @@ const questions = [
     name: "installation",
   },{
     type: "input",
-    message: "Provide examples and instructions for project usage",
+    message: "Provide instructions for project usage",
     name: "usage",
   },{
     type: "input",

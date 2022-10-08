@@ -1,46 +1,47 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license == 'MIT'){
-    return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)] \n' 
+  var licenseBadge;
+  if (license == `MIT License`){
+    licenseBadge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)] \n';
   }
-  if (license == 'Apache'){
-    return '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)] \n' 
+  else if (license == `Apache License 2.0`){
+    licenseBadge = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)] \n';
   }
-  if (license == 'None'){
-    return '' 
+  else {
+    licenseBadge = "";
   }
-}
+};
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  let prefix = ' License, Here is the link for more details: ' 
-  if (license == 'MIT'){
-    return license+prefix+'https://opensource.org/licenses/MIT' 
+  let message = ' License, Here is the link: ' 
+  if (license == `MIT License`){
+    return license+message+'https://opensource.org/licenses/MIT' 
   }
-  if (license == 'Apache'){
-    return license+prefix+'https://opensource.org/licenses/Apache-2.0' 
+  else if (license == `Apache License 2.0`){
+    return license+message+'https://opensource.org/licenses/Apache-2.0' 
   }
-  if (license == 'None'){
-    return ''
+  else {
+    return "";
   }
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license == 'None') {
-    return ''
-  } else{
-    return '## License'
-  }
+  var licenseInfo = '![License](' + renderLicenseBadge(license) + ')  ' + renderLicenseLink(license);
+  return licenseInfo;
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.Title}
-  ${renderLicenseBadge(data.license)}
+  return `
+
+${renderLicenseSection(data.license)}
+
+# ${data.title} \n
 ## Description 
 ${data.description}
 ## Table of Contents
@@ -58,8 +59,6 @@ ${data.usage}
 ${data.credits}
 ## License
 ${data.license}
-${renderLicenseSection(data.license)}
-${renderLicenseLink(data.license)}
 ## Contribute 
 ${data.contribution}
 ## Testing 

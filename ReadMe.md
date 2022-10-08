@@ -1,11 +1,8 @@
 
-License: (undefined)  Apache License 2.0 License, Here is the link: https://opensource.org/licenses/Apache-2.0 
-
-
-# Readme Generator 
+# ReadMe Generator 
 
 ## Description
-This project is a readme generator. 
+This project is a readme generator, it's intention is to make making readme's easier. 
 
 ## Table of Contents
 [Installation](#installation)
@@ -16,16 +13,18 @@ This project is a readme generator.
 [Tests](#tests)
 ## Installation 
 
-Github is required for this project. 
+Github is needed to access this readme generator. 
 
 ## Usage
-Please follow the prompts. 
+Follow the prompts in the console. 
 
 ## Credits
-npm and JavaScript 
+NPM and NodeJs 
 
 ## License
 Apache License 2.0 
+
+License: (undefined)  Apache License 2.0 License, Here is the link: https://opensource.org/licenses/Apache-2.0 
 
 ## Contribute
 William 
